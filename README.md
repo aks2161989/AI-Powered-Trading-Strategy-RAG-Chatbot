@@ -7,10 +7,20 @@ RAG chatbot and stock analysis platform that answers questions about Warren Buff
 ### 1. Backend
 
 ```bash
+# Create and activate virtual environment
+# macOS / Linux:
 python3.12 -m venv venv
 source venv/bin/activate
+
+# Windows (PowerShell):
+python -m venv venv
+.\venv\Scripts\Activate.ps1
+
+# Install dependencies
 pip install -r requirements.txt
-python ingest.py        # builds FAISS + BM25 indexes (~1 min)
+
+# Build FAISS + BM25 indexes (run once, ~1 min)
+python ingest.py
 ```
 
 ### 2. Frontend
@@ -18,6 +28,7 @@ python ingest.py        # builds FAISS + BM25 indexes (~1 min)
 ```bash
 cd ui
 npm install
+cd ..
 ```
 
 ### 3. Groq API Key (recommended)
@@ -32,24 +43,43 @@ Free key at https://console.groq.com. Switches from local FLAN-T5 to Llama 3.3-7
 
 ## Running
 
-**Terminal 1 -- Backend:**
+### Option 1: Full-Stack App (React + FastAPI)
+
+**Terminal 1 -- Backend (FastAPI):**
 ```bash
+# macOS / Linux:
 source venv/bin/activate
 uvicorn server:app --reload --port 8000
-```
 
-**Terminal 2 -- Frontend:**
+# Windows (PowerShell):
+.\venv\Scripts\activate
+uvicorn server:app --reload --port 8000
+```
+Backend API will be live at http://localhost:8000.
+
+**Terminal 2 -- Frontend (React + Vite):**
 ```bash
 cd ui
 npm run dev
 ```
-
 Open http://localhost:5173.
 
-**Streamlit UI** (alternative, no frontend needed):
+---
+
+### Option 2: Streamlit UI (Standalone alternative)
+
+If you prefer a single-command UI without running the React frontend:
+
 ```bash
+# macOS / Linux:
+source venv/bin/activate
+streamlit run app.py
+
+# Windows (PowerShell):
+.\venv\Scripts\activate
 streamlit run app.py
 ```
+Open http://localhost:8501.
 
 ## How It Works
 
@@ -78,6 +108,7 @@ Question → Embed (MiniLM) → Hybrid Search (BM25 + FAISS) → Cross-Encoder R
 | Portfolio | `/` | Berkshire Hathaway holdings with sector allocation chart |
 | Chat | `/chat` | RAG chatbot with conversation history, sources, stock analysis |
 | Trading | `/trading` | Fundamental analysis (12 Buffett ratios) + strategy backtesting |
+| Evaluation | `/evaluation` | RAG evaluation benchmark results and chunking comparisons |
 
 ## Data
 
@@ -104,7 +135,7 @@ In `data/`:
 ├── data/                  # PDF + CSV source files
 ├── vectorstore/           # FAISS + BM25 indexes (generated, gitignored)
 └── ui/                    # React + Vite + Tailwind frontend
-    ├── src/pages/         # Portfolio, Chat, Trading pages
+    ├── src/pages/         # Portfolio, Chat, Trading, Evaluation pages
     ├── src/components/    # Reusable UI components
     └── src/services/      # API client
 ```
@@ -122,4 +153,4 @@ In `data/`:
 | Backtesting | Custom (MA Crossover, RSI) |
 | Backend | FastAPI + Uvicorn |
 | Frontend | React + Vite + Tailwind CSS |
-| Evaluation | Custom benchmark suite (10 questions, 3 metrics) | 
+| Evaluation | Custom benchmark suite (15 questions, 3 metrics) | 
