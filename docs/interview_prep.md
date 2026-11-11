@@ -756,7 +756,7 @@ From the database to the front end, it’s completely custom: a React 18 dark-mo
 #### [2:00 – 3:30] Part 3: The Part That Broke & How I Fixed It
 *"Now, let’s talk about what broke—because building reliable fallbacks in production is where the real engineering happens.
 
-`[Screen Share: Open VS Code to rag_chain.py lines ~225–250]`
+`[Screen Share: Open VS Code to rag_chain.py (in root folder, lines 224–244)]`
 
 When I first wired up our offline CPU fallback using the local `FLAN-T5` model, the app completely fell apart: on long questions, it either spat out one-word gibberish or hallucinated wildly, even though our cloud model worked fine.
 
@@ -843,8 +843,12 @@ If recording via **Loom** (recommended) or screen capture with webcam bubble:
 1. **Window 1 (Browser Tab 1):** React Dashboard (`http://localhost:5173`)
    - Pre-load a clean chat state (use Incognito or click `+ New Chat`).
    - Have the "Trading" tab ready with AAPL or KO to show the 11 moat criteria badges and backtest equity curve.
-2. **Window 2 (VS Code or IDE):** Open `rag_chain.py`
-   - Scroll to lines ~225–250 where the dynamic context budgeting between Groq and FLAN-T5 occurs.
+2. **Window 2 (VS Code or IDE):** Open `rag_chain.py` (at project root, 285 lines total — *not* `src/rag_chat.py` which is an older 91-line prototype)
+   - Scroll to lines **224–244** where the dynamic context budgeting and 512-token ceiling truncation fix occurs:
+     ```python
+     # Line 224: if groq_client is not None (cloud full context)
+     # Line 235: else: Local FLAN-T5 (short_context = docs[:3], max_length=512)
+     ```
 3. **Window 3 (Architecture / Slides):** Clean 3-box diagram:
    `React UI  ──>  FastAPI  ──>  Hybrid Search (FAISS + BM25)  ──>  Groq / Local Model`
 
@@ -1179,23 +1183,23 @@ When sharing your screen in VS Code or discussing architecture with interviewers
 
 ---
 
-#### File 3: Generation Pipeline & Dynamic Context Budgeting ([`rag_chain.py`](file:///C:/Users/aksha/OneDrive/NEU-coursework/CSYE7380/Final%20project/CSYE7380_FinalProject/rag_chain.py))
+#### File 3: Generation Pipeline & Dynamic Context Budgeting ([`rag_chain.py`](file:///C:/Users/aksha/OneDrive/NEU-coursework/CSYE7380/Final%20project/CSYE7380_FinalProject/rag_chain.py)) *(Root Directory, 285 lines total — not `src/rag_chat.py`)*
 
 * **Method 1: `enrich_followup_query(question, history)` (Lines ~40–55)**
   * **What to Highlight:** The heuristic `len(question.split()) < 8` and extracting `last_assistant[-1]['content'][:200]`.
   * **What to Say:**
     > *"In `rag_chain.py`, line 45, is our 0ms context helper. When users ask short follow-ups like 'Why did he do that?', making an extra LLM call to rewrite the prompt would add 1 to 2 seconds of latency. Instead, if a question is under 8 words and there's prior conversation, we grab the relevant context from the last assistant message in zero milliseconds."*
 
-* **Method 2: `ask(question, history=None)` (Lines ~177–275)**
+* **Method 2: `ask(question, history=None)` (Lines 177–272, highlight Lines 224–244)**
   * **What to Highlight:** 
-    1. Checking `is_stock_query(question)` and fetching quantitative stock telemetry.
-    2. Dynamic context budgeting between Groq LPU and FLAN-T5 (lines ~225–245).
-    3. Regex citation verification `validate_citations(answer, len(docs))`.
+    1. Lines 224–233: Cloud inference with full 5-document context.
+    2. Lines 234–244: Local CPU fallback using `docs[:3]` and `max_length=512` to eliminate the silent prompt-truncation bug.
+    3. Lines 246–250: Regex citation verification `validate_citations(answer, len(docs))`.
   * **What to Say:**
     > *"The `ask()` function is our main backend orchestrator:
     > 1. It checks if the question mentions a stock; if so, it pulls live data from Yahoo Finance and calculates 11 financial metrics.
     > 2. It runs our hybrid search and reranking.
-    > 3. Lines 230 to 245 handle request budgeting: when calling cloud models on Groq, we pass all 5 snippets and chat history. But if the app falls back to our local CPU model, it automatically trims to 3 snippets and caps the input under 380 tokens to prevent the 512-token truncation bug.
+    > 3. Lines 224 to 244 handle request budgeting: when calling cloud models on Groq, we pass all 5 snippets and chat history. But if the app falls back to our local CPU model, it automatically trims to 3 snippets (`docs[:3]`) and caps the input under 380 tokens to prevent the 512-token truncation bug.
     > 4. Finally, `validate_citations()` strips any made-up citation numbers before sending the JSON response to the frontend."*
 
 ---
