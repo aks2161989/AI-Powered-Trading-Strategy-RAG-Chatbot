@@ -691,105 +691,107 @@ This experience reinforced that production AI engineering isn't just about calli
 
 ---
 
-### 14.1 Role & Video Prompt Deconstruction
+### 14.1 Role & Video Prompt Deconstruction (Full-Stack SWE Perspective)
 
-To stand out for a Founding Full-Stack Engineer role at an AI-first venture like Alori, the 5-minute video must signal three critical traits:
-1. **Full-Stack Ownership & Velocity:** You build end-to-end systems from raw data pipelines and vector databases to backend inference and pixel-perfect interactive frontends.
-2. **Deep Systems & AI Engineering Rigor:** You don't just call OpenAI endpoints; you understand latent spaces, token dynamics, fallback resilience, and algorithmic causality.
-3. **Product & Architectural Maturity:** You think about developer ergonomics, agentic workflows, deterministic vs. non-deterministic boundaries, and scalable event-driven architectures.
+To stand out for a Founding Full-Stack Engineer role at an early-stage startup like Alori, the 5-minute video should highlight **practical software engineering ability**, not academic ML theory. Engineering founders want to see:
+1. **End-to-End Full-Stack Ownership:** You build entire features yourself—from the database/indexes and backend APIs to responsive React components and animations.
+2. **Pragmatic AI Integration:** You don't just call an API and hope it works. You treat AI models like any external, untrusted third-party service: managing payload limits, building reliable offline fallbacks, validating outputs with defensive code, and keeping latency low.
+3. **Product & Systems Maturity:** You write maintainable code, think through edge cases, isolate external API failures, and care deeply about the user experience.
 
-#### Why the Warren Buffett Intelligence Hub is the Perfect Subject:
-- **It is Full-Stack:** React 18 + Vite + Tailwind frontend, asynchronous FastAPI backend, FAISS vector store, BM25 inverted indexes, Groq LPU + local CPU inference.
-- **It Pushes AI Past the Chatbot:** It integrates autonomous real-world actions—scraping and parsing live SEC EDGAR 13F XML filings, evaluating 11 fundamental balance sheet criteria, running algorithmic backtests, and enforcing verified source citations.
-- **It Has Real Engineering Breaking Points:** Subtle token truncation limits, vector retrieval blind spots, and quantitative lookahead bias provide rich, authentic debugging narratives.
+#### Why This Project is a Great Full-Stack SWE Demo:
+- **Real Full-Stack Architecture:** React 18 frontend with Tailwind CSS, asynchronous FastAPI backend in Python, local search indexes (FAISS & BM25), and live third-party integrations (Yahoo Finance, SEC EDGAR).
+- **Practical Problem-Solving:** Not just a toy chat UI—it pulls live financial balance sheets, computes 11 business health metrics, runs historical trading backtests with zero lookahead bias, and verifies source documents.
+- **Real-World Debugging Story:** A clear, relatable software bug where payload limits silently truncated inputs in the offline fallback model, and how it was diagnosed and fixed with defensive request budgeting.
 
 ---
 
 ### 14.2 The 5-Minute Master Blueprint & Pacing Chart
 
-Target duration: **4 minutes 30 seconds to 4 minutes 50 seconds** (comfortably under the 5-minute hard ceiling).
+Target duration: **4 minutes 30 seconds to 4 minutes 50 seconds** (comfortably under the 5-minute ceiling).
 
 ```
  0:00 ──────────────── 0:45 ──────────────── 2:00 ──────────────── 3:30 ──────────────── 4:25 ──────── 5:00
 ┌──────────────────────┬──────────────────────┬──────────────────────┬──────────────────────┬─────────────┐
-│ 1. Hook & Overview   │ 2. Deep Dive: What   │ 3. What Broke & How  │ 4. What I'd Do       │ 5. Why      │
-│    (What I Built)    │    It Does (Stack)   │    I Fixed It        │    Differently Today │    Alori    │
+│ 1. Hook & Overview   │ 2. What It Does      │ 3. What Broke & How  │ 4. What I'd Do       │ 5. Why      │
+│    (Full-Stack App)  │    (Architecture)    │    I Fixed It        │    Differently Today │    Alori    │
 │    [45 sec]          │    [75 sec]          │    [90 sec]          │    [55 sec]          │    [35 sec] │
 └──────────────────────┴──────────────────────┴──────────────────────┴──────────────────────┴─────────────┘
 ```
 
 | Segment | Timestamp | Target Duration | Core Objective | Visual Cue (Screen Share) |
 | :--- | :--- | :--- | :--- | :--- |
-| **1. Hook & Overview** | `0:00 – 0:45` | 45 sec | High-energy hook; introduce yourself, the platform, and the full-stack problem it solves. | Face to camera / Split screen with React UI |
-| **2. Full-Stack Deep Dive** | `0:45 – 2:00` | 75 sec | Explain what it does: end-to-end data flow from React UI -> FastAPI -> Hybrid RAG -> Quant Engine -> SEC Feed. | Click through UI tabs (Chat, Stock Analysis, Backtester) |
-| **3. The Breaking Point** | `2:00 – 3:30` | 90 sec | Walk through the exact part that broke: FLAN-T5 silent right-truncation context ceiling and hallucination breakdown, root cause, and adaptive payload fix. | Show `rag_chain.py` code snippet or architecture slide |
-| **4. What I'd Do Differently** | `3:30 – 4:25` | 55 sec | Architectural reflection: event-driven asynchronous state machine with streaming SSE vs procedural endpoints. | Show workflow state diagram / system design |
-| **5. Founding Engineer Fit** | `4:25 – 5:00` | 35 sec | Connect back to Alori's mission: shipping daily, building software that writes itself, zero-to-one ownership. | Direct to camera, confident close |
+| **1. Hook & Overview** | `0:00 – 0:45` | 45 sec | Introduce yourself and give the 30-second elevator pitch of the full-stack app. | Face to camera / React UI dashboard |
+| **2. Full-Stack Walkthrough** | `0:45 – 2:00` | 75 sec | Show how the system works end-to-end: React UI $\rightarrow$ FastAPI $\rightarrow$ Hybrid Search $\rightarrow$ Live APIs. | Click through UI tabs (Chat, Moat Analysis, Backtesting) |
+| **3. The Breaking Point** | `2:00 – 3:30` | 90 sec | Walk through the exact bug: local fallback model hitting a 512-token limit, truncating user prompts, and the fix. | Show `rag_chain.py` code in VS Code |
+| **4. What I'd Do Differently** | `3:30 – 4:25` | 55 sec | Architectural upgrade: moving from synchronous blocking calls to an event-driven streaming model (SSE/WebSockets). | Clean workflow diagram / browser network tab |
+| **5. Founding Engineer Fit** | `4:25 – 5:00` | 35 sec | Why you want to be a founding engineer: shipping daily, taking full ownership, moving fast. | Direct to camera, confident close |
 
 ---
 
-### 14.3 Verbatim Master Speaking Script (4.5 – 5.0 Minutes)
+### 14.3 Verbatim Master Speaking Script (Full-Stack SWE Edition)
 
 > [!TIP]
-> **Pacing Guidance:** Read at an energetic, conversational pace (~135 words per minute). Total word count is **~670 words**. Keep your delivery punchy and natural.
+> **Delivery Tips:** Speak naturally and conversationally, like you're explaining your project to another senior software engineer over coffee. Avoid academic buzzwords; focus on how data moves, what broke, and how you solved it. Total length is **~650 words** (~4.5 minutes).
 
 #### [0:00 – 0:45] Part 1: The Hook & What I Built
-*"Hi Alori team! I'm [Your Name]. Today I want to walk you through an end-to-end platform I built from scratch: the **Warren Buffett Financial Intelligence Hub**. 
+*"Hi Alori team! I'm [Your Name]. Today I want to walk you through a full-stack platform I built from the ground up: the **Warren Buffett Financial Intelligence Hub**.
 
 `[Screen Share: Switch to React Dashboard at localhost:5173]`
 
-Most AI financial tools stop at being a thin wrapper around a chatbot. I wanted to build a production system that pushes AI into autonomous operational workflows: combining deep qualitative knowledge retrieval with live quantitative equity research and algorithmic backtesting.
+A lot of AI demos today are just simple wrappers around a generic chat prompt. I wanted to build a real, production-ready full-stack application that connects conversational AI to live business data and deterministic calculations.
 
-From the database to the last pixel, it’s a full-stack system: a React 18 dark-mode dashboard on the front, an asynchronous FastAPI backend, and an intelligent engine that ingests over 1,000 pages of Berkshire Hathaway shareholder letters, tracks live SEC EDGAR 13F institutional filings, evaluates balance sheet moats, and simulates trading strategies."*
+From the database to the front end, it’s completely custom: a React 18 dark-mode dashboard with Tailwind CSS, an asynchronous FastAPI backend in Python, and a search engine that indexes over 1,000 pages of shareholder letters. On top of that, it pulls live SEC filings, evaluates fundamental financial health metrics on real stocks, and runs backtests on historical market data."*
 
-#### [0:45 – 2:00] Part 2: What It Does & The Full-Stack Architecture
-*"Here’s what happens under the hood when a user asks a question:
+#### [0:45 – 2:00] Part 2: What It Does & The Architecture
+*"Let’s look at how the data flows when a user asks a question:
 
-`[Screen Share: Type 'How does Berkshire evaluate insurance float?' or click an example]`
+`[Screen Share: Type 'How does Berkshire evaluate insurance float?' or click a sample question]`
 
-1. **Hybrid Retrieval:** Dense vector search alone has blind spots on domain-specific tickers and historical years. So I built a two-stage hybrid retrieval engine: FAISS dense vectors paired with BM25Okapi sparse keyword search, merged via Reciprocal Rank Fusion ($k=60$). A Cross-Encoder reranker (`ms-marco-MiniLM-L-6-v2`) evaluates joint cross-attention to pass the top-5 highest-signal passages to the LLM.
-2. **Dual-Tier Generation:** Primary inference runs on Groq’s cloud LPU with Llama 3.3-70B for sub-second, grounded generation with strict regex citation verification (`[1]`, `[2]`). If external APIs are unavailable, the system automatically falls back to an offline local CPU model (`google/flan-t5-base`).
-3. **Autonomous Financial Actions:** 
-   `[Screen Share: Click on 'Stock Moat Analysis' tab, show Apple (AAPL)]`
-   If the user asks about an equity, the backend parses the ticker, pulls live telemetry via `yfinance`, checks 11 proprietary Warren Buffett moat metrics—like gross margins over 40% and cash-to-debt ratios—and executes lookahead-free backtesting on SMA and RSI strategies with interactive performance curves."*
+1. **Hybrid Search Pipeline:** Pure semantic vector search sounds great on paper, but in practice, it often struggles with exact keywords—like a specific year ('1977') or a stock ticker ('AAPL'). To fix that, I built a hybrid search: we run vector search and classic BM25 keyword search side-by-side, merge their results based on rank order, and run a quick second-pass reranker so the LLM gets only the 5 most relevant passages.
+2. **Dual-Tier Inference with Local Fallback:** For production speed, we hit cloud LPUs on Groq for sub-second answers with bracketed citations. But if an API key is missing or the external network drops, the backend automatically falls back to a lightweight local model (`FLAN-T5`) running on CPU, so the app never goes down.
+3. **Live Data & Deterministic Calculations:**
+   `[Screen Share: Click on Trading tab or ask about AAPL in Chat]`
+   When a user asks about a company, our backend detects the stock ticker with regex, hits Yahoo Finance for real-time balance sheet numbers, calculates 11 fundamental business metrics in Python, and runs an algorithmic trading backtest with interactive charts—all displayed right in the UI."*
 
 #### [2:00 – 3:30] Part 3: The Part That Broke & How I Fixed It
-*"Now, let’s talk about what broke—because building zero-dependency fallbacks in production is never as simple as wrapping an API call in a `try/except` block.
+*"Now, let’s talk about what broke—because building reliable fallbacks in production is where the real engineering happens.
 
-`[Screen Share: Show rag_chain.py snippet in IDE or architecture breaking point diagram]`
+`[Screen Share: Open VS Code to rag_chain.py lines ~225–250]`
 
-When I tested the offline fallback with FLAN-T5 running locally on CPU, the system broke catastrophically: it started outputting hallucinated single-word fragments or completely ignoring the user's prompt. 
+When I first wired up our offline CPU fallback using the local `FLAN-T5` model, the app completely fell apart: on long questions, it either spat out one-word gibberish or hallucinated wildly, even though our cloud model worked fine.
 
-When I profiled the token stream, I uncovered the root cause: FLAN-T5 has a strict **512-token maximum sequence length**. Our hybrid retriever was passing five dense passages (~1,500 tokens) plus conversation history into the tokenizer. Because the tokenizer silently right-truncated inputs that exceeded the ceiling, it literally sliced off the prompt instructions and the user’s question at the tail end! The model was receiving a random slice of financial text with no instructions and no prompt.
+When I debugged the raw payload entering the model, I found the bug: this local model has a strict **512-token input limit**. Because our retrieval step was sending five full text snippets—about 1,500 tokens of text—plus chat history, the tokenizer was truncating the input from the right side. 
+
+That meant it was silently chopping off the user’s question and instructions at the end! The model was just receiving a random chunk of text with no question attached.
 
 **How I Fixed It:**
-I re-architected the generation pipeline in `rag_chain.py` around **model-aware adaptive payload sculpting**:
-1. First, dynamic context budgeting: When routing to Groq Llama 3, the payload retains all top-5 chunks with multi-turn history. But when falling back to FLAN-T5, the pipeline dynamically trims to the top-3 highest-ranked chunks and strips conversational preambles to strictly cap input under 380 tokens.
-2. Second, I introduced a deterministic zero-latency query enrichment heuristic: if a follow-up query is under 8 words (like 'Why did he do that?'), it prepends the salient context from the prior assistant turn in $<1\text{ms}$ CPU time without an extra LLM call.
-3. Third, I added regex citation verification to strip any hallucinated bracketed citations.
+Instead of a naive one-size-fits-all prompt, I built **adaptive request budgeting**:
+1. **Model-Aware Context Budgeting:** When calling cloud models with 128k context, we send all 5 snippets and conversational history. But when the backend switches to the local model, it dynamically trims down to the top-3 snippets and strips extra conversational headers to guarantee the payload stays safely under 380 tokens.
+2. **Zero-Latency Follow-up Helper:** In multi-turn chat, users ask short follow-ups like 'Why did he do that?'. Instead of wasting 1 to 2 seconds making an extra AI call just to rewrite the question, I wrote a lightweight Python check that pulls context from the previous message in under 1 millisecond.
+3. **Regex Citation Validation:** I added a simple regex check that verifies all bracketed citation numbers (`[1]`, `[2]`) actually match the documents returned, stripping any hallucinations before sending the response to the frontend.
 
-This took local CPU fallback generation to 100% stability under 1.8 seconds with zero truncation errors."*
+This immediately made our local CPU fallback 100% stable, returning clean answers in under 1.8 seconds with zero truncation errors."*
 
 #### [3:30 – 4:25] Part 4: One Decision I Would Make Differently Today
-*"If I were designing this platform again today, the biggest decision I would change is **architecting the core execution pipeline as an asynchronous, event-driven state machine with Server-Sent Events (SSE) streaming**, rather than a procedural request handler in FastAPI.
+*"If I were architecting this from scratch today, the main decision I’d change is **moving from synchronous request-response endpoints to an asynchronous event-driven streaming architecture using Server-Sent Events (SSE)**.
 
-In the current implementation, intent classification, hybrid retrieval, yfinance queries, and SEC 13F parsing execute in a synchronized sequence. If SEC EDGAR or Yahoo Finance encounters transient latency, the entire HTTP response waits.
+Right now in FastAPI, when a user asks a stock question, the endpoint runs hybrid search, calls the LLM, and fetches third-party data from Yahoo Finance and SEC EDGAR in a single sequential HTTP request. If Yahoo Finance or SEC EDGAR takes 2 seconds to respond, the entire screen has to wait.
 
-If I rebuilt it today, I would decouple the tools into an agentic DAG:
-- The UI would instantly receive a streaming response for the qualitative answer.
-- Simultaneously, the quantitative telemetry and 13F institutional filing feeds would execute as parallel event nodes, streaming structured JSON chunks to hydrate the dashboard widgets progressively.
-- This would also make the system resilient: if one tool fails, the state machine can isolate that node, retry with exponential backoff, or degrade gracefully without blocking the user’s active screen."*
+If I rebuilt it today, I would decouple the tools into an event pipeline:
+- The UI would immediately receive a streaming text response for the qualitative answer in milliseconds.
+- Concurrently, the financial balance sheet calculations and SEC 13F filing feeds would run as separate background tasks, pushing JSON updates to hydrate the UI widgets as soon as they resolve.
+- This would also make the app much more fault-tolerant: if an external finance API fails or times out, the chat still works flawlessly, and only that specific widget displays a retry state."*
 
 #### [4:25 – 5:00] Part 5: Why Alori & Closing
-*"This directly connects to why I’m applying to Alori. You’re building software that writes, tests, and deploys itself while business owners watch—pushing AI from novelty chatbots into teammates that answer calls, close deals, and run day-to-day operations.
+*"This ties directly into why I’m excited about Alori. You’re building systems where business owners can describe what they need and have full apps generate and deploy right in front of them—software that actually runs the day-to-day operations.
 
-I love working at the frontier where speed, ambiguity, and high technical craft meet. I don’t wait for tickets; I love owning systems end-to-end—from vector indexes and database schemas to responsive UI animations—and shipping real code to production every day. 
+I love working at an early-stage startup where you own systems end-to-end—from database queries and API design to UI polish and error states—and ship to production every day without waiting for someone else to write a ticket.
 
-I’d love to bring this energy to Alori as a Founding Full-Stack Engineer. Thanks for watching, and I look forward to meeting the team!"*
+I’d love to bring this velocity and ownership to Alori as a Founding Full-Stack Engineer. Thanks for your time, and I look forward to speaking with the team!"*
 
 ---
 
-### 14.4 Quick-Glance Teleprompter Bullet Points
+### 14.4 Quick-Glance Teleprompter Bullet Points (SWE Friendly)
 
 Use these high-level bullet cards on an adjacent monitor or phone if you prefer speaking naturally rather than reading verbatim:
 
@@ -797,39 +799,37 @@ Use these high-level bullet cards on an adjacent monitor or phone if you prefer 
 ┌────────────────────────────────────────────────────────────────────────┐
 │ 1. HOOK & WHAT I BUILT (0:00 - 0:45)                                   │
 │ • Intro: Name + "Warren Buffett Financial Intelligence Hub"            │
-│ • Problem: Most AI tools are thin wrappers; I built an end-to-end      │
-│   production system combining RAG + Quantitative Backtesting.          │
-│ • Full Stack: React 18 UI -> FastAPI -> FAISS/BM25 -> Groq/FLAN-T5.   │
+│ • Problem: Not another toy chat wrapper; full-stack system with        │
+│   real data, financial logic, and backtesting.                         │
+│ • Stack: React 18 UI -> FastAPI -> Local Indexes -> Groq/Local Model.  │
 ├────────────────────────────────────────────────────────────────────────┤
 │ 2. WHAT IT DOES & HOW IT WORKS (0:45 - 2:00)                           │
-│ • Ingestion: 1,010 pages letters + 6,000 Q&A + Live SEC 13F XML.       │
-│ • Hybrid Retrieval: FAISS + BM25Okapi -> RRF (k=60) -> Cross-Encoder.  │
-│   (Hit rate jump: 73.3% -> 93.3%, MRR: 0.612 -> 0.867).                │
-│ • Dual LLM: Groq Llama 3.3-70B sub-second + Offline FLAN-T5 CPU.       │
-│ • Quant Moat Engine: 11 Buffett ratios + 1-day lagged backtester.      │
+│ • Search: Hybrid keyword + vector search (solves blind spots for exact │
+│   tickers/years) + fast reranking of top 10 results.                   │
+│ • Dual Models: Sub-second cloud Groq + fully offline local CPU model.  │
+│ • Live Data: Regex ticker detection, live balance sheets, 11 financial │
+│   ratios, and interactive backtesting charts.                          │
 ├────────────────────────────────────────────────────────────────────────┤
 │ 3. THE PART THAT BROKE & HOW I FIXED IT (2:00 - 3:30)                  │
-│ • What Broke: FLAN-T5 offline fallback hallucinated gibberish tokens.  │
-│ • Root Cause: 512-token hard ceiling silently right-truncated prompt,  │
-│   lopping off system instructions and the user question completely!    │
-│ • Fix (Adaptive Payload Sculpting):                                    │
-│   1) Model-aware context budgeting: top-3 chunks, max 380 tokens.      │
-│   2) Zero-latency deterministic query enrichment (<1ms).               │
-│   3) Regex citation validation ([1], [2]).                             │
-│ • Outcome: 100% stable offline CPU generation under 1.8 seconds.       │
+│ • What Broke: Local offline model spat out one-word gibberish.         │
+│ • Root Cause: 512-token input limit; passing 1,500 tokens caused the   │
+│   tokenizer to chop off the user's question at the end!                │
+│ • Fix (Adaptive Request Budgeting):                                    │
+│   1) Model-aware payload trimming: top-3 chunks, max 380 tokens.       │
+│   2) Fast 0ms follow-up context helper (no extra slow AI calls).       │
+│   3) Regex check to strip invalid citation numbers.                    │
+│ • Result: 100% stable offline CPU responses in ~1.8 seconds.           │
 ├────────────────────────────────────────────────────────────────────────┤
 │ 4. ONE DECISION I'D MAKE DIFFERENTLY TODAY (3:30 - 4:25)               │
-│ • Procedural FastAPI pipeline -> Asynchronous Event-Driven DAG + SSE.  │
-│ • Why: External APIs (SEC EDGAR, yfinance) currently block monolith.   │
-│ • Better: Stream qualitative response instantly via SSE while quant   │
-│   and filing tools resolve concurrently, hydrating UI components.      │
-│ • Alignment with Alori: Essential for software that builds itself.     │
+│ • Synchronous FastAPI endpoint -> Asynchronous SSE streaming.          │
+│ • Why: External APIs (Yahoo Finance/SEC) shouldn't block the chat.     │
+│ • Better: Stream text response instantly, hydrate widgets in parallel  │
+│   as external data arrives, isolating third-party failures.            │
 ├────────────────────────────────────────────────────────────────────────┤
 │ 5. WHY ALORI & FOUNDING FIT (4:25 - 5:00)                              │
-│ • Alori vision: Apps that write/deploy themselves, AI teammates.       │
-│ • Founding mindset: Bias for shipping daily, no tickets over walls,    │
-│   obsessed with quality from database to the last pixel.               │
-│ • Eager to set the bar and scale Alori. Thank you!                     │
+│ • Alori mission: Software that builds itself, real operational tools.   │
+│ • Founding mindset: End-to-end ownership, shipping daily, obsessed     │
+│   with quality from API to UI. Ready to build!                         │
 └────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -841,62 +841,59 @@ If recording via **Loom** (recommended) or screen capture with webcam bubble:
 
 #### Pre-Recording Setup:
 1. **Window 1 (Browser Tab 1):** React Dashboard (`http://localhost:5173`)
-   - Pre-load a clean chat state or have an example ready.
-   - Have the "Stock Analysis" tab ready with AAPL or KO to show the 11 moat criteria badges and backtest equity curve.
+   - Pre-load a clean chat state (use Incognito or click `+ New Chat`).
+   - Have the "Trading" tab ready with AAPL or KO to show the 11 moat criteria badges and backtest equity curve.
 2. **Window 2 (VS Code or IDE):** Open `rag_chain.py`
-   - Scroll to lines 110–140 where the dynamic context budgeting between Groq Llama 3 and FLAN-T5 occurs.
-3. **Window 3 (Architecture / Slides):** Open `architecture.md` or a clean diagram showing:
-   `User Query -> Intent Classifier -> Hybrid (FAISS + BM25) -> RRF -> Cross-Encoder -> Dual LLM`
+   - Scroll to lines ~225–250 where the dynamic context budgeting between Groq and FLAN-T5 occurs.
+3. **Window 3 (Architecture / Slides):** Clean 3-box diagram:
+   `React UI  ──>  FastAPI  ──>  Hybrid Search (FAISS + BM25)  ──>  Groq / Local Model`
 
 #### Camera & Audio Tips:
 - **Webcam Position:** Eye level; look directly into the camera lens when speaking your intro and outro (builds founder rapport).
 - **Audio:** Use a dedicated headset or USB mic. Founder review is fast; clear, crisp audio immediately sets a professional tone.
 - **Lighting:** Front-facing light; avoid backlighting from windows.
-- **Energy:** Speak with conviction, curiosity, and pace. Founders look for engineers who are enthusiastic and take pride in what they build.
+- **Energy:** Speak with conviction, curiosity, and pace. Founders look for engineers who are enthusiastic, practical, and take pride in what they build.
 
 ---
 
-### 14.6 Alternative Failure Modes & What-I'd-Do-Differently Matrix
+### 14.6 Alternative Failure Modes & What-I'd-Do-Differently Matrix (SWE Focus)
 
 If you want to customize your video narrative or prepare for follow-up founder questions, here are two equally powerful alternative stories:
 
 ```
 ┌──────────────────────────────────────────────────────────────────────────────────────────────────┐
-│ OPTION A (RECOMMENDED): FLAN-T5 Context Ceiling Truncation & Adaptive Payload Sculpting           │
+│ OPTION A (RECOMMENDED): Local Model Payload Truncation & Adaptive Budgeting                       │
 ├──────────────────────────────────────────────────────────────────────────────────────────────────┤
-│ • What Broke: Silent right-truncation in 512-token local fallback cutting off prompt instructions│
-│ • How Fixed: Dynamic context compression (top-3 chunks), zero-latency query enrichment, regex     │
-│ • Why It's Great: Demonstrates deep familiarity with tokenizers, fallback systems, and edge AI   │
+│ • What Broke: Local model has a 512-token ceiling; sending 1,500 tokens chopped off the prompt!   │
+│ • How Fixed: Dynamic payload budgeting based on active model, 0ms context enrichment, regex checks│
+│ • Why SWEs Love It: Shows you understand input limits, defensive programming, and fallback design│
 └──────────────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
 ```
 ┌──────────────────────────────────────────────────────────────────────────────────────────────────┐
-│ OPTION B: The Lexical-Semantic Retrieval Collapse & Score Scale Explosion                         │
+│ OPTION B: Exact Tickers & Years Disappearing in Semantic Search                                  │
 ├──────────────────────────────────────────────────────────────────────────────────────────────────┤
-│ • What Broke: Dense vectors failed on exact historical years ('1977') and tickers ('BRK.A');      │
-│   linear score combination (0.7*FAISS + 0.3*BM25) exploded because BM25 is unbounded (25+) while │
-│   FAISS cosine is bounded [-1, 1].                                                               │
-│ • How Fixed: Scale-invariant Reciprocal Rank Fusion (RRF, k=60) + Cross-Encoder reranking        │
-│ • Impact: Source Hit Rate jumped from 73.3% to 93.3%; MRR improved from 0.612 to 0.867           │
-│ • Why It's Great: Demonstrates advanced search and information retrieval engineering             │
+│ • What Broke: Pure vector search missed exact ticker symbols ('BRK.A') and historical years.     │
+│ • How Fixed: Hybrid search: vector similarity for concepts + BM25 for exact keywords, merged by  │
+│   rank order so neither search dominates the other.                                              │
+│ • Why SWEs Love It: Shows practical understanding of search trade-offs without over-engineering.  │
 └──────────────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
 ```
 ┌──────────────────────────────────────────────────────────────────────────────────────────────────┐
-│ OPTION C: Quantitative Lookahead Bias & Fictitious Alpha                                          │
+│ OPTION C: Fixing Lookahead Bias in the Backtesting Engine                                         │
 ├──────────────────────────────────────────────────────────────────────────────────────────────────┤
-│ • What Broke: Initial backtest showed an unrealistic 45% annual return with zero drawdown        │
-│   because trading signals were evaluated and executed at identical timestamp t close.            │
-│ • How Fixed: Enforced strict 1-day causal execution lag (Position = Signal.shift(1)) across      │
-│   2018–present multi-regime market stress periods.                                               │
-│ • Why It's Great: Highlights engineering honesty, causal rigor, and refusal to ship fake metrics │
+│ • What Broke: The backtester originally generated signals and executed trades on the exact same   │
+│   day's close, which is physically impossible and created fake 40%+ returns.                     │
+│ • How Fixed: Shifted positions forward by 1 trading day (`positions = signals.shift(1)`).        │
+│ • Why SWEs Love It: Shows high engineering integrity, causal correctness, and attention to detail│
 └──────────────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
 #### Alternative "What I Would Do Differently Today":
-- **AST & Document-Hierarchy Chunking:** *"Instead of naive 1,000-character chunking with 200-char overlap, I would implement AST and semantic layout-aware chunking. Financial statements contain tabular data where arbitrary character slicing splits balance sheet rows across chunk boundaries. Using table-aware markdown extraction would preserve complete financial tables as atomic vector documents."*
+- **Table-Aware Markdown Extraction:** *"Instead of naive 1,000-character chunking, I would parse balance sheets into structured Markdown tables before embedding. When standard splitters chop up text purely by character count, financial balance sheet tables get sliced in half across chunk boundaries. Using table-aware chunking keeps tabular financial data together as atomic documents."*
 
 ---
 
@@ -995,9 +992,9 @@ I want to be where the architectural decisions I make in the morning affect live
 
 * **What to Say (Verbatim Speaking Points):**
   > *"We start on the Berkshire Portfolio Tracker. This dashboard is powered by a live ingestion pipeline parsing Berkshire Hathaway's official SEC EDGAR Form 13F-HR filings. 
-  > Rather than relying on static tables, the system programmatically digests the XML feeds to surface Warren Buffett's real-time asset allocation. 
-  > As you can see from the sector breakdown, Berkshire remains heavily concentrated in consumer moats and enterprise software, with Apple representing over 40% of public equity assets alongside bedrock financial holdings like American Express and Bank of America. 
-  > This provides real-time quantitative context for the qualitative investment philosophy we explore in our chat engine."*
+  > Instead of hardcoding static tables, our backend parses the official XML feeds from the SEC to surface Warren Buffett's real-time asset allocation. 
+  > You can see from the sector chart that Berkshire is heavily concentrated in consumer moats and enterprise tech, with Apple making up over 40% of the portfolio alongside financial staples like Amex and Bank of America. 
+  > This live data feeds our quantitative research engine and provides real-world context for our chat features."*
 
 ---
 
@@ -1011,15 +1008,15 @@ Navigate to the **Chat** tab (`http://localhost:5173/chat`).
   What is Warren Buffett's philosophy on economic moats and pricing power?
   ```
 * **What Features to Show:**
-  1. Note the sub-second generation speed via Groq LPU.
-  2. Point out the strict inline bracketed citations (`[1]`, `[2]`, `[3]`) rendered throughout the response text.
-  3. Click on the **"Sources"** expandable accordion drawer below the answer.
-  4. Highlight the source card: show the document name (`All-Berkshire-Hathaway-Letters.pdf`), page number, and the exact retrieved text chunk.
+  1. Note the sub-second generation speed via the Groq cloud integration.
+  2. Point out the inline bracketed citations (`[1]`, `[2]`, `[3]`) in the answer.
+  3. Click on the **"Sources"** accordion drawer below the answer to expand it.
+  4. Highlight the source card: show the source PDF name (`All-Berkshire-Hathaway-Letters.pdf`), page number, and the exact retrieved text chunk.
 * **What to Say:**
-  > *"Here I'll submit a fundamental qualitative investment query: 'What is Warren Buffett's philosophy on economic moats and pricing power?' 
-  > Notice the generation speed—sub-second delivery powered by our Groq LPU backend. 
-  > More importantly, notice that every claim has an explicit bracketed citation. If I expand the Sources drawer below, you can see the exact underlying text chunk pulled from our indexed 1,010-page corpus of Berkshire shareholder letters, along with the exact source page number. 
-  > This is achieved through our hybrid retrieval pipeline: combining FAISS dense vector search with BM25Okapi lexical matching, merged via Reciprocal Rank Fusion and reranked using a Cross-Encoder."*
+  > *"Here I'll submit a classic qualitative question: 'What is Warren Buffett's philosophy on economic moats and pricing power?' 
+  > Notice the speed—we get a sub-second response through our Groq LPU integration. 
+  > More importantly, notice that every claim has a bracketed citation. If I expand the Sources drawer below, you can see the exact text snippet pulled from our indexed 1,010 pages of Berkshire letters, along with the original PDF page number. 
+  > This works because of our hybrid search pipeline: we run traditional keyword search and semantic vector search in parallel, merge the results by rank order, and run a fast reranker on the top 10 items to feed only the 5 cleanest passages to the LLM."*
 
 ---
 
@@ -1029,14 +1026,14 @@ Navigate to the **Chat** tab (`http://localhost:5173/chat`).
   Why does he prefer that over capital-intensive commodity businesses?
   ```
 * **What Features to Show:**
-  1. Show that the user did **not** have to re-type *"economic moats"* or *"Buffett"*.
-  2. Point out that the system correctly answered how pricing power companies achieve high returns on equity without constant capital reinvestment, unlike commodity producers.
-  3. Show the conversation history persisted on the left sidebar under the session title.
+  1. Show that you didn't have to re-type *"economic moats"* or *"Buffett"*.
+  2. Show that the bot understands the context and explains how pricing power businesses earn high returns on capital without constant reinvestment.
+  3. Point out the conversation session saved on the left sidebar.
 * **What to Say:**
-  > *"Now watch what happens when I ask a terse follow-up question: 'Why does he prefer that over capital-intensive commodity businesses?' 
-  > In standard RAG pipelines, anaphoric queries like this fail because dense vector search doesn't know what 'that' refers to. Traditional systems solve this by making a second LLM call to rewrite the query, adding 500 to 800 milliseconds of latency.
-  > Instead, I built a zero-latency heuristic query enrichment engine. When the system detects a terse follow-up under 8 words, it automatically enriches the retrieval query with the key entity context from the prior assistant turn in zero milliseconds. 
-  > The client maintains the conversation state in browser localStorage and dispatches it cleanly to our FastAPI backend, ensuring the server remains completely stateless."*
+  > *"Now watch what happens when I ask a quick follow-up: 'Why does he prefer that over capital-intensive commodity businesses?' 
+  > In many AI systems, ambiguous follow-ups fail because vector search doesn't know what 'that' refers to. Most teams solve this by making an extra LLM call to rewrite the prompt, which adds 1 to 2 seconds of latency.
+  > Instead, I wrote a simple 0-millisecond check on the backend: if the question is under 8 words, it automatically grabs context from the previous message so the search query stays accurate without any added lag. 
+  > The React frontend persists the conversation in localStorage and sends it with each request, keeping our FastAPI backend completely stateless and easy to scale."*
 
 ---
 
@@ -1047,14 +1044,14 @@ Navigate to the **Chat** tab (`http://localhost:5173/chat`).
   ```
   *(Alternative valid queries: `Analyze Apple stock using Buffett's principles` or `Is GOOGL a good investment?`)*
 * **What Features to Show:**
-  1. Point out that the chatbot automatically recognized a ticker symbol (`AAPL`) and classified the intent as a stock query.
-  2. Show the **Interactive Financial Scorecard** embedded right inside the chat response!
+  1. Point out that the chatbot recognized the equity ticker (`AAPL`) and automatically triggered stock analysis mode.
+  2. Show the **Interactive Financial Scorecard** embedded directly inside the chat response.
   3. Highlight the 11 Buffett Fundamental Moat Criteria: Gross Margin $\ge 40\%$, Net Margin $\ge 20\%$, ROE $> 15\%$, Debt-to-Equity, and Free Cash Flow status pills (green/red badges).
   4. Note the qualitative synthesis explaining why Apple passes Berkshire's moat heuristics.
 * **What to Say:**
-  > *"Next, let's test our hybrid qualitative-quantitative intent classifier: 'What would Buffett think of AAPL stock?'
-  > Rather than just performing text retrieval, the pipeline's regex classifier recognizes the equity ticker and triggers live telemetry via Yahoo Finance.
-  > It extracts historical income statements and balance sheets, evaluates 11 strict Warren Buffett fundamental heuristics—such as gross margin above 40%, return on equity exceeding 15%, and conservative debt leverage—and embeds this live scorecard directly into the chat response alongside qualitative analysis from Berkshire letters."*
+  > *"Next, let's test our stock analysis mode: 'What would Buffett think of AAPL stock?'
+  > The backend doesn't just do text retrieval here. Our regex parser detects the equity ticker and triggers live API calls to Yahoo Finance.
+  > It pulls the real income statement and balance sheet data, computes 11 fundamental Warren Buffett ratios in Python—like gross margins over 40% and conservative debt levels—and renders this interactive scorecard right inside the chat bubble with pass/fail badges alongside the qualitative analysis."*
 
 ---
 
@@ -1064,15 +1061,15 @@ Navigate to the **Chat** tab (`http://localhost:5173/chat`).
   What was Warren Buffett's view on Ethereum and Bitcoin in the 1975 shareholder letter?
   ```
 * **What Features to Show:**
-  1. Show that the model does **not** make up a fictitious 1975 quote about cryptocurrency.
+  1. Show that the model does **not** invent a fake quote from 1975 about crypto.
   2. Show the polite, calibrated refusal message:
      ```text
      "I don't have enough grounded information in the dataset to answer that confidently."
      ```
 * **What to Say:**
-  > *"Finally, let's test our anti-hallucination guardrail with an adversarial temporal question: 'What was Warren Buffett's view on Ethereum and Bitcoin in the 1975 shareholder letter?'
-  > In an enterprise financial application, a false hallucination is far worse than a refusal. Our generation prompt enforces strict negative grounding constraints: if the retrieved context does not explicitly substantiate the claim, the model is instructed to refuse.
-  > As you see, it cleanly responds that the indexed dataset contains no grounded evidence, preventing confident hallucinations."*
+  > *"Finally, let's test how the system handles questions with no factual basis in the data: 'What was Warren Buffett's view on Ethereum and Bitcoin in the 1975 shareholder letter?'
+  > In production software, an AI hallucination is far worse than an honest refusal. Our system prompt enforces strict negative guardrails: if the retrieved documents don't contain the answer, the model is instructed to decline.
+  > As you see, it cleanly informs the user that there's no grounded evidence in the dataset, rather than fabricating a confident hallucination."*
 
 ---
 
@@ -1085,18 +1082,18 @@ Navigate to the **Trading** tab (`http://localhost:5173/trading`).
   2. Point out the **Buffett Fundamental Moat Scorecard** (11 ratio cards displaying exact values, target thresholds, and passing/failing status tags).
   3. Scroll down to the **Backtesting Configuration Module**:
      - Select Strategy: **20/50 SMA Crossover** (or **14-day RSI**).
-     - Set Date Range: 2018 to Present (capturing multiple bull/bear regimes).
+     - Set Date Range: 2018 to Present (capturing multiple market cycles).
      - Click **"Run Strategy Backtest"**.
   4. Highlight the **Interactive Performance Chart (Recharts)** showing the strategy's Cumulative Return equity curve compared against the Buy & Hold benchmark.
   5. Point out the quantitative telemetry cards: **Total Return**, **Annualized Return (CAGR)**, **Sharpe Ratio**, **Maximum Drawdown**, and **Win Rate**.
   6. Click the button: **"Get Warren Buffett's Take on this Strategy"** and show the AI's critique of algorithmic momentum trading.
 
 * **What to Say:**
-  > *"Moving to the Quantitative Trading & Backtesting engine. This page bridges fundamental value investing with quantitative algorithmic execution.
-  > At the top, we compute 11 balance sheet ratios derived directly from Buffett's investment literature—evaluating operating margins, capital efficiency, and debt coverage.
-  > Below, we provide an algorithmic backtester for 20/50 day Moving Average crossovers and 14-day RSI momentum strategies. 
-  > A crucial engineering detail here is **zero lookahead bias**. In many junior backtesters, signals calculated at time t close are executed at time t, which is physically impossible and inflates returns. In our engine, trading positions are strictly shifted by one bar: `positions = signals.shift(1)`, guaranteeing realistic causal execution.
-  > When we click 'Get Warren Buffett's Take', our RAG pipeline evaluates the strategy metrics and offers a quintessential Buffett critique—reminding us that short-term price momentum has nothing to do with intrinsic business value."*
+  > *"Moving over to the Trading & Backtesting tab. This page pairs fundamental value investing with quantitative backtesting.
+  > At the top, we compute 11 balance sheet ratios derived from Buffett's literature—evaluating operating margins, capital efficiency, and debt coverage.
+  > Below, we provide an algorithmic backtester for 20/50 day Moving Average crossovers and 14-day RSI strategies. 
+  > A crucial software engineering detail here is **preventing lookahead bias**. In naive backtesters, signals calculated at Monday's market close are executed at Monday's close, which is physically impossible and inflates returns. In our engine, trading positions are strictly shifted forward by one day: `positions = signals.shift(1)`, guaranteeing realistic causal execution.
+  > When we click 'Get Warren Buffett's Take', our RAG pipeline evaluates the backtest numbers and offers a classic Buffett critique—reminding us that short-term price momentum is very different from owning a durable business."*
 
 ---
 
@@ -1118,10 +1115,10 @@ Navigate to the **Evaluation** tab (`http://localhost:5173/evaluation`).
      - Demonstrating why 1,000 characters with 200-character overlap was selected over 500, 750, 1500, and 2000 character variants.
 
 * **What to Say:**
-  > *"Finally, on the Evaluation dashboard, we believe you cannot improve what you cannot measure. 
-  > We benchmarked our retrieval architecture across 15 curated financial test questions categorized into four complexity tiers.
-  > As the data shows, dense vector search alone achieved only a 73.3% source hit rate—failing on exact financial figures and ticker symbols. Adding BM25 lexical search lifted hit rate to 86.7%, and adding Cross-Encoder reranking pushed it to 93.3% while lifting Mean Reciprocal Rank from 0.612 to 0.867.
-  > We also empirically validated our text chunking strategy across 5 window sizes, proving that 1,000 characters with 200 overlap strikes the optimal balance between semantic completeness and embedding token limits."*
+  > *"Finally, on the Evaluation dashboard, we treat AI quality like software regression testing: you have to measure it systematically.
+  > We built a benchmark test suite of 15 questions across four difficulty tiers to evaluate our search pipeline.
+  > The data proved that pure vector search achieved only a 73.3% hit rate because it missed exact numbers and tickers. Adding traditional BM25 keyword search boosted hit rate to 86.7%, and adding a second-pass reranker pushed it to 93.3% while significantly improving search ranking precision.
+  > We also tested 5 different text chunking configurations, confirming that 1,000 characters with 200 overlap strikes the optimal sweet spot between paragraph completeness and token limits."*
 
 ---
 
@@ -1152,19 +1149,19 @@ When sharing your screen in VS Code or discussing architecture with interviewers
 #### File 1: Data Ingestion & Preprocessing ([`ingest.py`](file:///C:/Users/aksha/OneDrive/NEU-coursework/CSYE7380/Final%20project/CSYE7380_FinalProject/ingest.py))
 
 * **Method 1: `preprocess_text(text: str) -> str` (Lines ~35–60)**
-  * **What to Highlight:** The regex replacements fixing Windows-1252 / UTF-8 mojibake (e.g. `\u2019` to `'`, `\u201c` to `"`) and stripping synthetic prompt boilerplate like `"Question: ... Answer: ..."`.
+  * **What to Highlight:** The regex replacements fixing Windows-1252 / UTF-8 character encoding glitches (e.g. `\u2019` to `'`, `\u201c` to `"`) and stripping boilerplate headers like `"Question: ... Answer: ..."`.
   * **What to Say:**
-    > *"In `ingest.py`, data quality is the first line of defense. The raw shareholder letters and CSV datasets contained substantial encoding corruption from legacy PDF formatting. In `preprocess_text`, I normalize whitespace and scrub mojibake artifacts. Crucially, I strip artificial synthetic prefixes from the Q&A dataset—if you leave strings like 'Question:' in the text, they contaminate the 384-dimensional latent embedding vector and distort semantic distance."*
+    > *"In `ingest.py`, data quality is the first step. The raw PDF shareholder letters and CSV datasets had character encoding glitches from older PDF formats. In `preprocess_text`, I normalize whitespace and scrub bad characters. I also remove boilerplate prompt headers like 'Question:' and 'Answer:' from the Q&A dataset so they don't pollute search similarity scores."*
 
 * **Method 2: `chunk_text(docs) -> list[Document]` (Lines ~75–95)**
   * **What to Highlight:** `RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200, separators=["\n\n", "\n", " ", ""])`.
   * **What to Say:**
-    > *"In `chunk_text`, I use LangChain's `RecursiveCharacterTextSplitter`. We chose a 1,000-character chunk size with a 200-character overlap based on empirical testing. 1,000 characters corresponds to approximately 220 tokens—comfortably within the 256-token sweet spot of our `paraphrase-MiniLM-L6-v2` embedding model while preserving full paragraph-level financial argumentation. The 200-character sliding overlap prevents key financial figures and sentences from being cleaved across chunk boundaries."*
+    > *"In `chunk_text`, I split text using a 1,000-character chunk size with a 200-character overlap. 1,000 characters is roughly 220 tokens—which fits comfortably within our embedding model's limit while keeping complete paragraphs intact. The 200-character overlap acts like a sliding window so sentences and balance sheet numbers don't get chopped in half between chunks."*
 
 * **Method 3: `build_indexes(chunks)` (Lines ~110–145)**
-  * **What to Highlight:** Building the FAISS inner-product vector store (`FAISS.from_documents`) and simultaneously tokenizing text into `vectorstore/bm25.pkl`.
+  * **What to Highlight:** Building the FAISS vector store (`FAISS.from_documents`) and simultaneously tokenizing text into `vectorstore/bm25.pkl`.
   * **What to Say:**
-    > *"In `build_indexes`, we create two distinct indexes: dense vector embeddings stored in a FAISS inner-product index, and a tokenized inverted index persisted with BM25Okapi. Both are serialized to the `vectorstore/` directory for sub-millisecond retrieval during online inference."*
+    > *"In `build_indexes`, we generate two local search indexes: a FAISS vector index for semantic concept matching, and a BM25 keyword index for exact word and ticker lookups. Both are saved to disk in `vectorstore/` for fast in-memory loading by the backend."*
 
 ---
 
@@ -1173,14 +1170,12 @@ When sharing your screen in VS Code or discussing architecture with interviewers
 * **Method 1: `reciprocal_rank_fusion(faiss_results, bm25_results, k=60)` (Lines ~45–75)**
   * **What to Highlight:** The formula $RRF\_Score(d) = \sum_{m \in M} \frac{1}{k + r_m(d)}$.
   * **What to Say:**
-    > *"In `retriever.py`, combining vector search and keyword search naively with linear weighted scores (`0.7 * FAISS + 0.3 * BM25`) fails because BM25 scores are unbounded positive numbers while FAISS cosine similarities are bounded between -1 and 1. 
-    > Instead, I implemented Reciprocal Rank Fusion using the standard smoothing constant $k=60$. RRF is scale-invariant—it relies purely on relative rankings rather than raw numerical scores, guaranteeing a balanced candidate distribution between dense semantic matches and exact keyword hits."*
+    > *"In `retriever.py`, combining keyword search and vector search naively with raw scores fails because BM25 produces scores from 0 to 30+, while vector cosine similarity is between -1 and 1. Trying to do `0.7 * FAISS + 0.3 * BM25` means BM25 completely dominates. Instead, I used Reciprocal Rank Fusion: it combines results based on rank position (1st, 2nd, 3rd) rather than raw numbers, giving both search methods a fair, balanced weighting."*
 
 * **Method 2: `rerank(query, candidates, top_n=5)` (Lines ~85–115)**
   * **What to Highlight:** Loading `cross-encoder/ms-marco-MiniLM-L-6-v2` and passing `[(query, doc.page_content) for doc in candidates]` into `cross_encoder.predict()`.
   * **What to Say:**
-    > *"In `rerank`, we address the classic bi-encoder bottleneck. Bi-encoders embed queries and documents independently into fixed-length vectors, missing subtle cross-token relationships. 
-    > Here, the top 10 candidates from RRF are fed into a Cross-Encoder. The Cross-Encoder computes full cross-attention across all tokens of the query and document simultaneously. We sort by the predicted relevance logit and retain only the top 5 pristine passages for the LLM context."*
+    > *"In `rerank`, we take the top 10 search results and run a quick second-pass reranker. Vector search alone is fast but approximate. The reranker compares the query and each text snippet together in detail, scoring their true relevance, so we can pass only the 5 cleanest passages to the LLM."*
 
 ---
 
@@ -1189,7 +1184,7 @@ When sharing your screen in VS Code or discussing architecture with interviewers
 * **Method 1: `enrich_followup_query(question, history)` (Lines ~40–55)**
   * **What to Highlight:** The heuristic `len(question.split()) < 8` and extracting `last_assistant[-1]['content'][:200]`.
   * **What to Say:**
-    > *"Here in `rag_chain.py`, line 45, is our 0ms follow-up query enrichment method. Rather than burning an LLM call on query rewriting, if a user prompt is under 8 words and we have conversational turns, we prepend the salient entity context from the prior assistant turn to formulate an augmented retrieval query."*
+    > *"In `rag_chain.py`, line 45, is our 0ms context helper. When users ask short follow-ups like 'Why did he do that?', making an extra LLM call to rewrite the prompt would add 1 to 2 seconds of latency. Instead, if a question is under 8 words and there's prior conversation, we grab the relevant context from the last assistant message in zero milliseconds."*
 
 * **Method 2: `ask(question, history=None)` (Lines ~177–275)**
   * **What to Highlight:** 
@@ -1197,11 +1192,11 @@ When sharing your screen in VS Code or discussing architecture with interviewers
     2. Dynamic context budgeting between Groq LPU and FLAN-T5 (lines ~225–245).
     3. Regex citation verification `validate_citations(answer, len(docs))`.
   * **What to Say:**
-    > *"The `ask()` function is our central orchestration pipeline:
-    > 1. It checks whether the user query targets a specific equity; if so, it queries Yahoo Finance and calculates our 11 Buffett ratios.
-    > 2. It performs hybrid retrieval and cross-encoder reranking.
-    > 3. Notice lines 230 to 245: this is where our dynamic context budgeting lives. When running on Groq LPUs, we inject all 5 retrieved chunks alongside the conversation history. But if the system falls back to local CPU FLAN-T5, we dynamically cap the payload to the top-3 chunks and strip conversational preambles to respect FLAN-T5's rigid 512-token input limit.
-    > 4. Finally, `validate_citations()` strips any hallucinated citation tags that exceed our retrieved document count."*
+    > *"The `ask()` function is our main backend orchestrator:
+    > 1. It checks if the question mentions a stock; if so, it pulls live data from Yahoo Finance and calculates 11 financial metrics.
+    > 2. It runs our hybrid search and reranking.
+    > 3. Lines 230 to 245 handle request budgeting: when calling cloud models on Groq, we pass all 5 snippets and chat history. But if the app falls back to our local CPU model, it automatically trims to 3 snippets and caps the input under 380 tokens to prevent the 512-token truncation bug.
+    > 4. Finally, `validate_citations()` strips any made-up citation numbers before sending the JSON response to the frontend."*
 
 ---
 
@@ -1210,12 +1205,12 @@ When sharing your screen in VS Code or discussing architecture with interviewers
 * **Method 1: `is_stock_query(question)` & `extract_ticker(question)` (Lines ~180–235)**
   * **What to Highlight:** Regex matching for equity symbols (e.g. `AAPL`, `MSFT`) and alias dictionaries (mapping `"apple"` to `AAPL`, `"coca cola"` to `KO`).
   * **What to Say:**
-    > *"In `stock_analysis.py`, `is_stock_query` uses a combination of financial action keywords—like 'invest in', 'buy', 'stock', 'analyze'—and company alias mapping to determine if a prompt warrants fundamental equity analysis."*
+    > *"In `stock_analysis.py`, we use regex to detect stock ticker symbols (like `AAPL` or `MSFT`) and support common company names (like 'Apple' or 'Coca Cola') so users can ask questions naturally without knowing the exact ticker."*
 
 * **Method 2: `calculate_buffett_score(metrics)` (Lines ~85–170)**
   * **What to Highlight:** The evaluation of 11 proprietary fundamental ratios with exact thresholds (Gross Margin $\ge 40\%$, Free Cash Flow positive, Long Term Debt to Net Income $< 5\times$, ROE $> 15\%$).
   * **What to Say:**
-    > *"In `calculate_buffett_score`, we codified Warren Buffett's qualitative balance sheet criteria into deterministic mathematical rules. We evaluate 11 separate metrics across the income statement, balance sheet, and cash flow statement, assigning passing boolean flags and compiling an overall moat score."*
+    > *"In `calculate_buffett_score`, we took Warren Buffett's investment heuristics and translated them into clean Python rules. We evaluate 11 metrics across the income statement, balance sheet, and cash flow—checking for things like gross margins over 40%, positive free cash flow, and manageable long-term debt."*
 
 ---
 
@@ -1229,13 +1224,12 @@ When sharing your screen in VS Code or discussing architecture with interviewers
     df['strategy_return'] = df['position'] * df['market_return']
     ```
   * **What to Say:**
-    > *"In `trading_backtest.py`, look at line 58: `df['position'] = df['signal'].shift(1)`. 
-    > This is the single most critical line of code in the quantitative engine. A signal computed at the end of trading day t can only be acted upon on day t+1. Shifting the signal forward by 1 bar strictly eliminates lookahead bias, ensuring that our cumulative returns, Sharpe ratios, and drawdowns represent realistic, executable strategies."*
+    > *"In `trading_backtest.py`, look at line 58: `df['position'] = df['signal'].shift(1)`. This is the most important bug prevention in the backtester. If an algorithm generates a buy signal at Monday's market close, you can't buy at Monday's close—you can only trade on Tuesday morning. Shifting the signal forward by 1 bar strictly prevents lookahead bias, ensuring that our returns, Sharpe ratio, and drawdown represent realistic trading."*
 
 * **Method 2: `calculate_metrics(strategy_returns, market_returns)` (Lines ~130–170)**
   * **What to Highlight:** Vectorized calculation of Annualized Sharpe Ratio ($\frac{\text{Mean Excess Return}}{\text{Std Dev}} \times \sqrt{252}$) and Maximum Drawdown calculation via cumulative peak tracking.
   * **What to Say:**
-    > *"Here in `calculate_metrics`, we compute standard quantitative metrics: annualized volatility scaled by $\sqrt{252}$ trading days, Sharpe ratio assuming a risk-free benchmark, and maximum peak-to-trough drawdown."*
+    > *"In `calculate_metrics`, we compute standard portfolio metrics: annualized volatility scaled by $\sqrt{252}$ trading days, Sharpe ratio assuming a risk-free benchmark, and maximum peak-to-trough drawdown."*
 
 ---
 
@@ -1244,7 +1238,7 @@ When sharing your screen in VS Code or discussing architecture with interviewers
 * **Method 1: `fetch_berkshire_holdings()` (Lines ~25–90)**
   * **What to Highlight:** Direct HTTP queries to SEC EDGAR API with User-Agent compliance, querying CIK `0001067983` (Berkshire Hathaway Inc), and parsing the 13F-HR `informationTable` XML structure.
   * **What to Say:**
-    > *"In `sec_filings.py`, we connect directly to the SEC EDGAR system using Berkshire Hathaway's official CIK identifier (`0001067983`). We parse the 13F-HR XML payload to extract security names, share quantities, and position values, comparing against prior quarter filings to calculate net institutional buys, trims, and portfolio weight changes."*
+    > *"In `sec_filings.py`, we query the SEC EDGAR API using Berkshire Hathaway's CIK number (`0001067983`). We parse the 13F-HR XML document to extract stock names, share counts, and position values, comparing with the previous quarter to show portfolio changes in the UI."*
 
 ---
 
@@ -1253,7 +1247,7 @@ When sharing your screen in VS Code or discussing architecture with interviewers
 * **Method 1: `lifespan(app: FastAPI)` (Lines ~40–60)**
   * **What to Highlight:** Modern async lifespan context manager initializing singleton models in memory at startup rather than per-request.
   * **What to Say:**
-    > *"In `server.py`, we use FastAPI's modern lifespan context manager to load singleton models into memory during server startup, preventing cold-start latency spikes on incoming requests."*
+    > *"In `server.py`, we use FastAPI's lifespan handler to load heavy models into memory once at startup rather than on every request, preventing cold-start delays for users."*
 
 * **Method 2: `@app.post("/api/chat")` (Lines ~255–265)**
   * **What to Highlight:** 
@@ -1262,7 +1256,7 @@ When sharing your screen in VS Code or discussing architecture with interviewers
     return ask(req.question, history=history_dicts)
     ```
   * **What to Say:**
-    > *"In `server.py` line 258, notice how we handle conversation history. The React frontend dispatches client-side history stored in `localStorage` as Pydantic `ChatMessage` models. Here, we unpack them into clean Python dictionaries and pass them into `ask(req.question, history=history_dicts)`. This connects client conversational memory to both our sliding-window prompt builder and our 0ms query enrichment heuristic."*
+    > *"In `server.py` line 258, notice how we handle conversation history. The React frontend sends client-side history from `localStorage` as Pydantic models. We unpack them into clean Python dicts and pass them to `ask()`, connecting client history to our prompt window and 0ms query enrichment without needing a database for short sessions."*
 
 ---
 
@@ -1273,7 +1267,7 @@ When sharing your screen in VS Code or discussing architecture with interviewers
   GROQ_MODEL = os.getenv("GROQ_MODEL", "openai/gpt-oss-120b")
   ```
 * **What to Say:**
-  > *"In `config.py`, line 31 demonstrates defensive enterprise configuration. Rather than hardcoding a static foundation model name, `GROQ_MODEL` is resolved dynamically from the environment. This decouples our code from third-party model deprecations and allows switching between high-performance reasoning models—like `openai/gpt-oss-120b` or Llama 3.3—via simple `.env` flags without rebuilding the container."*
+  > *"In `config.py`, line 31 uses `os.getenv('GROQ_MODEL', 'openai/gpt-oss-120b')`. Reading configuration from environment variables rather than hardcoding model names allows us to swap models or update endpoints in `.env` without touching Python code."*
 
 ---
 
@@ -1284,26 +1278,25 @@ When sharing your screen in VS Code or discussing architecture with interviewers
   2. The `handleSubmit()` async flow and error catching block (lines ~270–285) that surfaces detailed backend error telemetry directly to the UI.
   3. Interactive citations accordion and stock scorecard component embedding.
 * **What to Say:**
-  > *"On the frontend in `ChatPage.jsx`, the UI is built with React 18, Vite, and Tailwind CSS. Chat sessions are fully persisted across browser refreshes via `localStorage`. 
-  > In our catch block, we inspect API response errors to bubble diagnostic messages directly to the user if a server issue occurs. The interface dynamically parses the backend response payload to render interactive citation drawers and embedded financial scorecards."*
+  > *"On the frontend in `ChatPage.jsx`, the UI is built with React 18, Vite, and Tailwind CSS. Chat sessions are saved to browser `localStorage` so chats persist across page reloads. Our catch block extracts detailed API error messages from the backend so users see meaningful feedback instead of a generic failure screen."*
 
 ---
 
-### 15.3 Rapid Presentation Cheat-Sheet: 60-Second Elevators Per Module
+### 15.3 Rapid Presentation Cheat-Sheet: 60-Second Elevators Per Module (SWE Friendly)
 
-If asked a rapid question about any specific piece of the system during an interview, use these exact 60-second elevator responses:
+If an interviewer asks you to quickly summarize any specific part of the system, use these simple 60-second answers:
 
-* **1. Data Ingestion (`ingest.py`):**
-  *"We ingested 1,010 pages of Berkshire letters and ~6,000 Q&A pairs. We cleaned encoding mojibake, stripped synthetic prefix tokens that distort vector space, and applied `RecursiveCharacterTextSplitter` with 1,000-char chunks and 200 overlap to align with our 256-token MiniLM embedding model."*
+* **1. Data Ingestion & Preprocessing (`ingest.py`):**
+  *"We ingested 1,010 pages of PDF shareholder letters and ~6,000 Q&A pairs. We cleaned character encoding issues, stripped boilerplate headers, and split text into 1,000-character chunks with a 200-character overlap to balance complete paragraphs with embedding token limits."*
 
-* **2. Hybrid Retrieval & Reranking (`retriever.py`):**
-  *"Dense vectors fail on exact numbers and tickers, while BM25 fails on semantic concepts. We run both in parallel, fuse their top-10 candidates using scale-invariant Reciprocal Rank Fusion ($k=60$), and pass them to a Cross-Encoder (`ms-marco-MiniLM-L-6-v2`) for full cross-attention reranking, cutting down to the top-5 pristine chunks."*
+* **2. Hybrid Search & Reranking (`retriever.py`):**
+  *"Vector search is great for concepts but misses exact tickers and years, while keyword search misses semantic meaning. We run both together, combine their results by rank position so neither dominates, and run a fast reranker on the top 10 items to feed the 5 cleanest snippets into the prompt."*
 
-* **3. Dual-Tier LLM & Anti-Hallucination (`rag_chain.py`):**
-  *"We use Groq LPUs with dynamically configured models for sub-second cloud inference, with automatic zero-dependency fallback to local CPU `google/flan-t5-base`. We use dynamic context budgeting to respect FLAN-T5's 512-token ceiling, enforce strict negative grounding constraints, and validate inline citations via regex."*
+* **3. Dual Models & Request Budgeting (`rag_chain.py`):**
+  *"We use fast cloud models on Groq for sub-second generation, with an offline CPU model (`FLAN-T5`) as a zero-dependency fallback. To prevent the local model's 512-token limit from cutting off user questions, the backend dynamically trims context based on which model is active, and regex validates citation numbers."*
 
-* **4. Conversational Memory & 0ms Disambiguation (`rag_chain.py`, `server.py`):**
-  *"The server is stateless; React passes conversation history from `localStorage`. For follow-ups under 8 words, we prepend the prior assistant turn's entity context in 0ms, achieving high retrieval accuracy without the 600ms latency of an LLM query rewriter."*
+* **4. Conversational Context & Disambiguation (`rag_chain.py`, `server.py`):**
+  *"The backend is stateless; the React UI passes conversation history from `localStorage`. For short follow-up questions under 8 words, we borrow context from the previous message in zero milliseconds, avoiding the 1 to 2 second delay of an extra AI prompt rewrite call."*
 
-* **5. Quantitative Equity & Lookahead-Free Backtesting (`stock_analysis.py`, `trading_backtest.py`):**
-  *"We parse equity tickers from natural language, query Yahoo Finance, and evaluate 11 Warren Buffett balance sheet moat heuristics. Our backtesting engine computes 20/50 SMA and RSI strategies with strict 1-day lag shifting (`positions = signals.shift(1)`), eliminating lookahead bias while calculating Sharpe ratios and maximum drawdown."*
+* **5. Financial Telemetry & Backtesting (`stock_analysis.py`, `trading_backtest.py`):**
+  *"We detect equity tickers with regex, query Yahoo Finance for live balance sheets, and compute 11 Warren Buffett business ratios. Our backtester simulates SMA and RSI trading strategies with a strict 1-day lag (`shift(1)`) to eliminate lookahead bias and compute realistic returns and drawdowns."*
