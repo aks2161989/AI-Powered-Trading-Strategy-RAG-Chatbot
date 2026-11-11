@@ -257,7 +257,8 @@ def buffett_analysis(req: BuffettAnalysisRequest):
 def chat(req: QuestionRequest):
     from rag_chain import ask
 
-    return ask(req.question)
+    history_dicts = [{"role": m.role, "content": m.content} for m in req.history] if req.history else None
+    return ask(req.question, history=history_dicts)
 
 
 class BacktestTakeRequest(BaseModel):

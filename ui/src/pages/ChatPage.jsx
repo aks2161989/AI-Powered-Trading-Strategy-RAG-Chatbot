@@ -272,11 +272,13 @@ export default function ChatPage() {
           return { ...c, messages: newMsgs, title: deriveTitle(newMsgs) };
         }),
       );
-    } catch {
+    } catch (err) {
       const errorMsg = {
         role: 'assistant',
         content:
-          'Sorry, something went wrong. Make sure the FastAPI server is running (uvicorn server:app --port 8000).',
+          err?.message?.includes('API error')
+            ? `Backend error (${err.message}). Check your FastAPI terminal console for the traceback.`
+            : 'Sorry, something went wrong. Make sure the FastAPI server is running (uvicorn server:app --port 8000).',
       };
       setConversations((prev) =>
         prev.map((c) => {
